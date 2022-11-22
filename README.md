@@ -10,16 +10,19 @@ In the past (not sure if they fixed it) their need algorithm seems to doesn't ta
 Mk 2 Merr-Sonn Thermal Detonator
 -- 1 Mk 3 BioTech Implant
 -- 1 Mk 3 BlasTech Weapon Mod 
-Now if the need was 30 Mk 2 Merr-Sonn Thermal Detonator and there were currently 5 in inventory. Their algorithm would determine the need at:
--- 25 Mk 2 Merr-Sonn Thermal Detonator
--- 30 Mk 3 BioTech Implant
--- 30 Mk 3 BlasTech Weapon Mod
+Now if the need was 30 Mk 2 Merr-Sonn Thermal Detonator and there were currently 5 in inventory. Their algorithm would determine the need at:  
+-- 25 Mk 2 Merr-Sonn Thermal Detonator  
+-- 30 Mk 3 BioTech Implant  
+-- 30 Mk 3 BlasTech Weapon Mod  
 So the need value would be 5 over for BioTech and BlasTech pieces, and this is compounded for any other recipes that require those same pieces.
 ## How to use the script?
-This script was written in python using the Selenium Webdriver for Google Chrome. It requires having both Google Chrome and the Selenium Webdriver that matches the Google Chrome version. https://www.selenium.dev/documentation/webdriver/
-If a different browser or scraper is desired, feel free to change or use whatever pieces of the script as needed.
-Once Selenium is set up, the script must be editted by putting your ally code in wherever the <allycode> appears in the script.
-Second, you must get a session key from HotUtils and put the session key in the wherever the <sessionkey> appears in the script.
-Running the script (python gearScrape.ph) will create the 2 csv files which need to be imported into the spreadsheet.
-On the "Gear Have Scrape", everything below the red: "Gear below has to be manually entered" has to be entered manually as it can't be scraped from swgoh.gg.
- 
+This script was written in python using the Selenium Webdriver for Google Chrome. It requires having both Google Chrome and the Selenium Webdriver that matches the Google Chrome version. https://www.selenium.dev/documentation/webdriver/  
+If a different browser or scraper is desired, feel free to change or use whatever pieces of the script as needed.  
+Once Selenium is set up, the script must be editted by putting your ally code in wherever the <allycode> appears in the script.  
+ Second, you must get a session key from HotUtils and put the session key in the wherever the <sessionkey> appears in the script.  
+ To get the session key, log in to HotUtils, and in Chrome press Ctrl-Shift-j to bring up the Developer Tools.![DevToolsNetwork](https://user-images.githubusercontent.com/5667248/203377530-4e148b75-e0e8-4a4b-995f-602ae72e6397.png)
+Select the Network tab, and hit Ctrl-r to reload the page.Select the "hotutils" on the left, and select the "Headers" tab on the right. In the "Requests Headers", scroll down to the cookie. It should look like this "cookie: hotUtilsSession=<sessionkey>; hotUtilsAllyCode=<allycode>". Everything between the = and the ; is the session key.![RequestHeaders](https://user-images.githubusercontent.com/5667248/203379503-6e3882dc-4c46-4555-9dee-f1372f240ed6.png)
+
+ Running the script (python gearScrape.ph) will create the 2 csv files which need to be imported into the spreadsheet.  
+ On the "Gear Need Scrape", I suggest deleting all the information on the sheet before importing the new data to make sure there is only the current information in the sheet.
+ On the "Gear Have Scrape", I suggest deleting all the information above the red:"Gear below has to be manually entered" for the same reason. Everything below has to be entered manually so just adjust the values as needed for those.
