@@ -1,5 +1,5 @@
-# swgoh-salvage-tracker
-## What is the Salvage Tracker?
+# salvager
+## What is the Salvager?
 Salvage Tracker is a spreadsheet developed to help players of SWGOH to determine how much "extra" gear is available for relic scrapping.
 ## How does it work?
 In short terms, the user fills out the "Gear Need Scrape" sheet with the gear needed for characters not yet fully geared, and the user fills out the "Gear Have Scrape" sheet with all the gear they currently have in their inventory. Once all the data is entered, then the Gear Main applies a top down recipe filter to determine how much lower gear is needed to fulfill any higher order recipes. The end result is then pushed to the Gear Salvage sheet. The Gear Salvage sheet has a column named "Have" which is the total number of pieces of that particular gear you have in inventory. The Gear Salvage sheet has a column named "Salvage" which is the amount of gear you have in inventory above needed. According to the gear you inputed on the Gear Need sheet and the Gear Have sheet, the "Salvage" column is the amount of that particular gear that is completely safe for scrapping.
